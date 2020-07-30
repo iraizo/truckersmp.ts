@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Truckersmp api wrapper made in TypeScript.",
   "main": "src/truckersmp.js",
-  "repository": "https://github.com/iraizo/truckersmp.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iraizo/truckersmp.ts.git"
+  },
   "author": "iraizo <groebner.loron@gmail.com>",
   "license": "MIT",
   "dependencies": {
@@ -11,9 +14,16 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
-    "dev": "ts-node-dev src/truckersmp.ts --respawn"
+    "dev": "ts-node-dev truckersmp.ts --respawn"
   },
   "devDependencies": {
     "ts-node-dev": "^1.0.0-pre.56"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/iraizo/truckersmp.ts/issues"
+  },
+  "homepage": "https://github.com/iraizo/truckersmp.ts#readme",
+  "keywords": [
+    "truckersmp"
+  ]
 }
