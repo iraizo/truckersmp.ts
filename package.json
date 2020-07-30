@@ -1,0 +1,19 @@
+{
+  "name": "truckersmp.ts",
+  "version": "1.0.0",
+  "description": "Truckersmp api wrapper made in TypeScript.",
+  "main": "src/truckersmp.js",
+  "repository": "https://github.com/iraizo/truckersmp.ts",
+  "author": "iraizo <groebner.loron@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "typescript": "^3.9.7"
+  },
+  "scripts": {
+    "dev": "ts-node-dev src/truckersmp.ts --respawn"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^1.0.0-pre.56"
+  }
+}
