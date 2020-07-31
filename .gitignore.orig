@@ -1,0 +1,7 @@
+node_modules
+<<<<<<< HEAD
+.idea
+src/truckersmp.ts
+=======
+.idea
+>>>>>>> 6add60bfa2cf26808f442d343a0dff0cb2eb2b95
