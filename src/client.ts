@@ -50,4 +50,16 @@ export class CClient {
             }), e => reject(e);
         })
     }
+
+    public getGameTime(): Promise<number> {
+        return new Promise(async (resolve, reject) => {
+            await restManager.request("https://api.truckersmp.com/v2/game_time", "GET").then(async response => {
+                if(response.status == 200) {
+                    const json = await response.json();
+                    resolve(json["game_time"]);
+                }
+            }), e => reject(e);
+        })
+    }
+
 }
