@@ -15,5 +15,10 @@ Documentation for API client can be found on the <a href="https://github.com/ira
 ## Support
 If you have any issues with the library please create a <a href="https://github.com/iraizo/truckersmp.ts/issues">issue</a> and i will try to help you.
 
+## TODO
+- Finish all API endpoints.
+- Add native error handling via the return JSON.
+- Work on the Documentation.
+
 ## License
 This package is open-source and is licensed under the <a href="https://github.com/iraizo/truckersmp.ts/blob/master/LICENSE.md">MIT license</a>.
