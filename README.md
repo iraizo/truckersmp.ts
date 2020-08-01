@@ -1,5 +1,5 @@
 <p align="center"><img src="https://camo.githubusercontent.com/7990b7910ff6483220b080fef28e6f7f07adda3f/68747470733a2f2f747275636b6572736d702e636f6d2f6173736574732f696d672f747275636b6572736d702d6c6f676f2d736d2e706e67"/></p>
-<p align="center"><img src="https://img.shields.io/npm/v/truckersmp.ts?style=flat-square"> <img src="https://img.shields.io/github/last-commit/iraizo/truckersmp.ts?style=flat-square"> <img src="https://img.shields.io/github/languages/top/iraizo/truckersmp.ts?style=flat-square"> <img src="https://img.shields.io/npm/l/truckersmp.ts?style=flat-square"></p>
+<p align="center"><img src="https://img.shields.io/npm/v/truckersmp?style=flat-square"> <img src="https://img.shields.io/github/last-commit/iraizo/truckersmp.ts?style=flat-square"> <img src="https://img.shields.io/github/languages/top/iraizo/truckersmp.ts?style=flat-square"> <img src="https://img.shields.io/npm/l/truckersmp.ts?style=flat-square"></p>
 
 ## Introduction
 This is a 3rd party library made for connecting the offical API endpoints to a easy to use TypeScript/JavaScript library.
