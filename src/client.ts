@@ -3,7 +3,7 @@ import {CRestManager} from "./restManager";
 import {IPlayer} from "./interfaces/players";
 import {IBans} from "./interfaces/bans";
 import {IServer} from "./interfaces/servers";
-import {ICompany, ICompanyIndex, ICompanyNews} from "./interfaces/company";
+import {ICompany, ICompanyIndex, ICompanyNews, ICompanyNewsPost, ICompanyRoleInformation} from "./interfaces/company";
 
 const restManager = new CRestManager();
 
@@ -39,6 +39,7 @@ export class CClient {
             for (let i = 0; i < response["response"].length; i++) {
                 servers.push(response["response"][i]);
             }
+
             return servers;
         }
     }
@@ -47,6 +48,7 @@ export class CClient {
         const response = await restManager.request("https://api.truckersmp.com/v2/game_time", "GET");
         if (response.status == 200) {
             const json = await response.json()
+
             return json["game_time"];
         }
     }
@@ -67,29 +69,58 @@ export class CClient {
                 for (let key in Object.keys(json.response.featured_cover)) {
                     companyIndex.response.featured_cover.push(json["response"]["featured_cover"][key]);
                 }
+
                 return companyIndex;
             }
         }
 
-        public async getInformation(id: number) {
+        public async getInformation(vtcId: number) {
             let company = {} as ICompany;
-            const response = await restManager.request("https://api.truckersmp.com/v2/vtc/" + id, "GET");
+            const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${vtcId}`, "GET");
             if (response.status == 200) {
                 const json = await response.json();
+
                 return company = json["response"]; // TODO: convert this into json.response (see getplayer() return)
             }
         }
 
-        public async getNews(id: number) {
+        public async getNews(vtcId: number) {
             let news: ICompanyNews[] = [];
-            const response = await restManager.request("https://api.truckersmp.com/v2/vtc/" + id + "/news", "GET");
-            if(response.status == 200) {
+            const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${vtcId}/news`, "GET");
+            if (response.status == 200) {
                 const json = await response.json();
-                for(let key in Object.keys(json["response"]["news"])) {
+                for (let key in Object.keys(json["response"]["news"])) {
                     news.push(json.response.news[key]);
                 }
+
                 return news;
             }
         }
+
+        public async getNewsPost(vtcId: number, id: number) {
+            const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${vtcId}/news/${id}`, "GET");
+            if (response.status == 200) {
+                let news = {} as ICompanyNewsPost;
+                const json = await response.json();
+
+                return news = json["response"];
+            }
+        }
+
+        public async getRoles(vtcId: number) {
+            const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${vtcId}/roles`, "GET");
+            if (response.status == 200) {
+                let roles: ICompanyRoleInformation[] = [];
+                const json = await response.json();
+
+                for (let key in Object.keys(json["response"]["roles"])) {
+                    roles.push(json["response"]["roles"][key]);
+                }
+
+                return roles;
+            }
+        }
+
+
     }
 }
