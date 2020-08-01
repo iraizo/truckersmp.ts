@@ -1,8 +1,8 @@
 {
   "name": "truckersmp",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Truckersmp api wrapper made in TypeScript.",
-  "main": "src/truckersmp.js",
+  "main": "src/client.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iraizo/truckersmp.ts.git"
