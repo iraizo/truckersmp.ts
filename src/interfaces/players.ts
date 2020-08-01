@@ -1,5 +1,3 @@
-
-
 export interface IPlayer {
     error: boolean,
     response: {
@@ -29,15 +27,15 @@ export interface IPlayer {
             hidden?: boolean,
         }
         permissions: {
-        isStaff: boolean,
-        isUpperStaff: boolean,
-        isGameAdmin: boolean,
-        showDetailedOnWebMaps: boolean,
-        id: number,
-        name: string,
-        tag: string,
-        inVTC: boolean,
-        memberID: number,
+            isStaff: boolean,
+            isUpperStaff: boolean,
+            isGameAdmin: boolean,
+            showDetailedOnWebMaps: boolean,
+            id: number,
+            name: string,
+            tag: string,
+            inVTC: boolean,
+            memberID: number,
         }
     }
 }
