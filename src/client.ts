@@ -3,7 +3,7 @@ import {CRestManager} from "./restManager";
 import {IPlayer} from "./interfaces/players";
 import {IBans} from "./interfaces/bans";
 import {IServer} from "./interfaces/servers";
-import {ICompany, ICompanyIndex} from "./interfaces/company";
+import {ICompany, ICompanyIndex, ICompanyNews} from "./interfaces/company";
 
 const restManager = new CRestManager();
 
@@ -67,8 +67,8 @@ export class CClient {
                 for (let key in Object.keys(json.response.featured_cover)) {
                     companyIndex.response.featured_cover.push(json["response"]["featured_cover"][key]);
                 }
+                return companyIndex;
             }
-            return companyIndex;
         }
 
         public async getInformation(id: number) {
@@ -76,7 +76,19 @@ export class CClient {
             const response = await restManager.request("https://api.truckersmp.com/v2/vtc/" + id, "GET");
             if (response.status == 200) {
                 const json = await response.json();
-                return company = json["response"];
+                return company = json["response"]; // TODO: convert this into json.response (see getplayer() return)
+            }
+        }
+
+        public async getNews(id: number) {
+            let news: ICompanyNews[] = [];
+            const response = await restManager.request("https://api.truckersmp.com/v2/vtc/" + id + "/news", "GET");
+            if(response.status == 200) {
+                const json = await response.json();
+                for(let key in Object.keys(json["response"]["news"])) {
+                    news.push(json.response.news[key]);
+                }
+                return news;
             }
         }
     }
