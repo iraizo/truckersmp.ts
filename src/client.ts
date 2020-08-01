@@ -63,11 +63,21 @@ export class CClient {
 
     public async getVersion() {
         const response = await restManager.request("https://api.truckersmp.com/v2/version", "GET");
-        if(response.status == 200) {
+        if (response.status == 200) {
             let version = {} as IRules;
             const json = await response.json();
 
             return version = json;
+        }
+    }
+
+    public async getRules() {
+        const response = await restManager.request("https://api.truckersmp.com/v2/rules", "GET");
+        if (response.status == 200) {
+            let rules = {} as IRules;
+            const json = await response.json();
+
+            return rules = json;
         }
     }
 
