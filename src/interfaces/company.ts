@@ -1,5 +1,5 @@
 
-export interface CompanyIndex {
+export interface ICompany {
     id: number,
     name: string,
     owner_id: number,
@@ -26,7 +26,15 @@ export interface CompanyIndex {
     created: Date
 }
 
-export interface CompanyNews {
+export interface ICompanyIndex {
+    response: {
+        recent: ICompany [],
+        featured: ICompany [],
+        featured_cover: ICompany []
+    }
+}
+
+export interface ICompanyNews {
     id: number,
     title: string,
     content_summary: string,
@@ -35,7 +43,7 @@ export interface CompanyNews {
     pinned: boolean
 }
 
-export interface CompanyNewsPost {
+export interface ICompanyNewsPost {
     id: number,
     title: string,
     content_summary: string,
@@ -45,11 +53,21 @@ export interface CompanyNewsPost {
     pinned: boolean
 }
 
-export interface CompanyRoles {
+export interface ICompanyRoleInformation {
     id: number,
     name: string,
     order: number,
     owner: boolean,
     created_at: Date,
     updated_at: Date
+}
+
+export interface ICompanyMember {
+    id: number,
+    user_id: number,
+    username: string,
+    steam_id: number,
+    role_id: number,
+    role: string,
+    joinDate: Date
 }
