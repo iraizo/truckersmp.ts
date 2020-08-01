@@ -11,6 +11,7 @@ import {
     ICompanyNewsPost,
     ICompanyRoleInformation
 } from "./interfaces/company";
+import {IRules} from "./interfaces/rules";
 
 const restManager = new CRestManager();
 
@@ -57,6 +58,16 @@ export class CClient {
             const json = await response.json()
 
             return json["game_time"];
+        }
+    }
+
+    public async getVersion() {
+        const response = await restManager.request("https://api.truckersmp.com/v2/version", "GET");
+        if(response.status == 200) {
+            let version = {} as IRules;
+            const json = await response.json();
+
+            return version = json;
         }
     }
 
@@ -144,7 +155,7 @@ export class CClient {
                 let members: ICompanyMember[] = [];
                 const json = await response.json();
 
-                for(let key in Object.keys(json["response"]["members"])) {
+                for (let key in Object.keys(json["response"]["members"])) {
                     members.push(json["response"]["members"][key]);
                 }
 
@@ -154,7 +165,7 @@ export class CClient {
 
         public async getMember(id: number, member: number) {
             const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${id}/member/${member}`, "GET");
-            if(response.status == 200) {
+            if (response.status == 200) {
                 let member_: ICompanyMember;
                 const json = await response.json();
 
