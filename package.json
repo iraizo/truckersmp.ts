@@ -26,5 +26,6 @@
   "homepage": "https://github.com/iraizo/truckersmp.ts#readme",
   "keywords": [
     "truckersmp"
-  ]
+  ],
+  "type": "module"
 }
