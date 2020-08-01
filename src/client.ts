@@ -3,7 +3,7 @@ import {CRestManager} from "./restManager";
 import {IPlayer} from "./interfaces/players";
 import {IBans} from "./interfaces/bans";
 import {IServer} from "./interfaces/servers";
-import {ICompanyIndex} from "./interfaces/company";
+import {ICompany, ICompanyIndex} from "./interfaces/company";
 
 const restManager = new CRestManager();
 
@@ -69,6 +69,15 @@ export class CClient {
                 }
             }
             return companyIndex;
+        }
+
+        public async getInformation(id: number) {
+            let company = {} as ICompany;
+            const response = await restManager.request("https://api.truckersmp.com/v2/vtc/" + id, "GET");
+            if (response.status == 200) {
+                const json = await response.json();
+                return company = json["response"];
+            }
         }
     }
 }
