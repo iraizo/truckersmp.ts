@@ -50,8 +50,9 @@ export class Client {
         let servers: IServer[] = [];
         const response = await restManager.request("https://api.truckersmp.com/v2/servers", "GET");
         if (response.status == 200) {
-            for (let i = 0; i < response["response"].length; i++) {
-                servers.push(response["response"][i]);
+            const json = await response.json();
+            for (let i = 0; i < json["response"].length; i++) {
+                servers.push(json["response"][i]);
             }
 
             return servers;
