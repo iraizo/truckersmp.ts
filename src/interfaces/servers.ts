@@ -5,7 +5,7 @@ export interface IServer {
     "port": number,
     "name": string,
     "shortname": string,
-    "idprefix"?: null,
+    "idprefix"?: string,
     "online": boolean,
     "players": number,
     "queue": number,
