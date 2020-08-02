@@ -1,6 +1,6 @@
 {
   "name": "truckersmp",
-  "version": "1.1.5",
+  "version": "1.2.2",
   "description": "Truckersmp api wrapper made in TypeScript.",
   "main": "dist/client.js",
   "module": "dist/client.esm.js",
@@ -14,7 +14,7 @@
     "node-fetch": "^2.6.0"
   },
   "scripts": {
-    "dev": "ts-node-dev truckersmp.ts --respawn",
+    "dev": "ts-node-dev testing.ts --respawn",
     "build": "rollup --config"
   },
   "devDependencies": {
@@ -32,9 +32,8 @@
   "keywords": [
     "truckersmp"
   ],
-  "type": "module",
   "files": [
-    "dist/client.js"
+    "dist"
   ],
   "types": "dist/client.d.ts",
   "typings": "dist/client.d.ts"
