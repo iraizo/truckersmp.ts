@@ -1,8 +1,8 @@
 {
   "name": "truckersmp",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Truckersmp api wrapper made in TypeScript.",
-  "main": "src/client.ts",
+  "main": "dist/client.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iraizo/truckersmp.ts.git"
@@ -10,15 +10,18 @@
   "author": "iraizo <groebner.loron@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^14.0.27",
-    "isomorphic-fetch": "^2.2.1",
-    "typescript": "^3.9.7"
+    "isomorphic-fetch": "^2.2.1"
   },
   "scripts": {
-    "dev": "ts-node-dev truckersmp.ts --respawn"
+    "dev": "ts-node-dev truckersmp.ts --respawn",
+    "build": "rollup --config"
   },
   "devDependencies": {
-    "ts-node-dev": "^1.0.0-pre.56"
+    "@types/node": "^14.0.27",
+    "@wessberg/rollup-plugin-ts": "^1.3.1",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "ts-node-dev": "^1.0.0-pre.56",
+    "typescript": "^3.9.7"
   },
   "bugs": {
     "url": "https://github.com/iraizo/truckersmp.ts/issues"
@@ -27,5 +30,10 @@
   "keywords": [
     "truckersmp"
   ],
-  "type": "module"
+  "type": "module",
+  "files": [
+    "dist/client.js"
+  ],
+  "types": "dist/client.d.ts",
+  "typings": "dist/client.d.ts"
 }

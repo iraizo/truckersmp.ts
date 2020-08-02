@@ -1,3 +1,4 @@
 node_modules
 .idea
 src/truckersmp.ts
+dist
