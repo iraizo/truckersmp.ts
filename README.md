@@ -7,7 +7,8 @@ The Library includes a interface for every data structure possible.
 If you want to use the API without the library, check out the <a href="https://stats.truckersmp.com/api">API Documentation</a>.
 
 ## Requirements
-- TypeScript/Node
+- TypeScript or JavaScript
+- Node
 
 ## Documentation
 Documentation for API client can be found on the <a href="https://github.com/iraizo/truckersmp.ts/wiki">Wiki</a>.
@@ -16,7 +17,6 @@ Documentation for API client can be found on the <a href="https://github.com/ira
 If you have any issues with the library please create a <a href="https://github.com/iraizo/truckersmp.ts/issues">issue</a> and i will try to help you.
 
 ## TODO
-- Finish all API endpoints.
 - Add native error handling via the return JSON.
 - Work on the Documentation.
 
