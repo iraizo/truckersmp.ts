@@ -27,14 +27,14 @@ export class Client {
         this.Company = new Company();
     }
 
-    public async getPlayer(id: number): Promise<IPlayer> {
+    public async getPlayer(id: string): Promise<IPlayer> {
         const response = await restManager.request("https://api.truckersmp.com/v2/player/" + id, "GET")
         if (response.status == 200) {
             return await response.json();
         }
     }
 
-    public async getBans(id: number): Promise<IBans[]> {
+    public async getBans(id: string): Promise<IBans[]> {
         let bans: IBans[] = [];
         const response = await restManager.request("https://api.truckersmp.com/v2/bans/" + id, "GET")
         if (response.status == 200) {
@@ -104,14 +104,14 @@ class Company {
         }
     }
 
-    public async getInformation(id: number): Promise<ICompany> {
+    public async getInformation(id: string): Promise<ICompany> {
         const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${id}`, "GET");
         if (response.status == 200) {
             return await response.json()["response"]; // TODO: convert this into json.response (see getplayer() return)
         }
     }
 
-    public async getNews(id: number): Promise<ICompanyNews[]> {
+    public async getNews(id: string): Promise<ICompanyNews[]> {
         let news: ICompanyNews[] = [];
         const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${id}/news`, "GET");
         if (response.status == 200) {
@@ -124,14 +124,14 @@ class Company {
         }
     }
 
-    public async getNewsPost(id: number, news: number): Promise<ICompanyNewsPost> {
+    public async getNewsPost(id: string, news: string): Promise<ICompanyNewsPost> {
         const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${id}/news/${news}`, "GET");
         if (response.status == 200) {
             return await response.json()["response"];
         }
     }
 
-    public async getRoles(id: number): Promise<ICompanyRoleInformation[]> {
+    public async getRoles(id: string): Promise<ICompanyRoleInformation[]> {
         const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${id}/roles`, "GET");
         if (response.status == 200) {
             let roles: ICompanyRoleInformation[] = [];
@@ -145,7 +145,7 @@ class Company {
         }
     }
 
-    public async getRole(id: number, roleId: number): Promise<ICompanyRoleInformation> {
+    public async getRole(id: string, roleId: string): Promise<ICompanyRoleInformation> {
         const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${id}/role/${roleId}`, "GET");
         if (response.status == 200) {
             let role: ICompanyRoleInformation;
@@ -155,7 +155,7 @@ class Company {
         }
     }
 
-    public async getMembers(id: number): Promise<ICompanyMember[]> {
+    public async getMembers(id: string): Promise<ICompanyMember[]> {
         const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${id}/members`, "GET");
         if (response.status == 200) {
             let members: ICompanyMember[] = [];
@@ -169,7 +169,7 @@ class Company {
         }
     }
 
-    public async getMember(id: number, member: number): Promise<ICompanyMember> {
+    public async getMember(id: string, member: string): Promise<ICompanyMember> {
         const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${id}/member/${member}`, "GET");
         if (response.status == 200) {
             return await response.json()["response"];
