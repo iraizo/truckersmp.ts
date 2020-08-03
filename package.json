@@ -1,6 +1,6 @@
 {
   "name": "truckersmp",
-  "version": "1.2.4",
+  "version": "1.2.6",
   "description": "Truckersmp api wrapper made in TypeScript.",
   "main": "dist/client.js",
   "module": "dist/client.esm.js",
