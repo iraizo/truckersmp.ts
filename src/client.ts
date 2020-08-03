@@ -30,7 +30,7 @@ export class Client {
     public async getPlayer(id: string): Promise<IPlayer> {
         const response = await restManager.request("https://api.truckersmp.com/v2/player/" + id, "GET")
         if (response.status == 200) {
-            return await response.json();
+            return await response.json()["response"];
         }
     }
 
