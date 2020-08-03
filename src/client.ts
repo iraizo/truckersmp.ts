@@ -21,7 +21,7 @@ const restManager = new CRestManager();
 
 export class Client {
 
-    private Company: Company;
+    public Company: Company;
 
     constructor() {
         this.Company = new Company();
