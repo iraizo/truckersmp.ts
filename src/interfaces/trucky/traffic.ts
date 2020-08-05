@@ -1,6 +1,6 @@
 export interface ITruckyTraffic {
     country: string,
-    locations: ITruckyTrafficLocation[],
+    locations: ITruckyTrafficLocation[]
 }
 
 export interface ITruckyTrafficLocation {
