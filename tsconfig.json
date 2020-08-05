@@ -6,6 +6,7 @@
     "removeComments": true,
     "declaration": true,
     "noEmit": true,
+    "moduleResolution": "node",
     "lib": [
       "dom",
       "es5",
