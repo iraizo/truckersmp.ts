@@ -14,7 +14,7 @@
     "node-fetch": "^2.6.0"
   },
   "scripts": {
-    "dev": "ts-node-dev testing.ts --respawn",
+    "dev": "ts-node-dev src/client.ts --respawn",
     "build:lib": "rollup --config rollup.config.json",
     "build:docs": "typedoc --out docs src"
   },
