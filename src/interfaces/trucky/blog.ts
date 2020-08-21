@@ -1,4 +1,4 @@
-interface ITruckyBlog {
+export interface ITruckyBlog {
     type: string,
     createdAt: Date,
     description: string,

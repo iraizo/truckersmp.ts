@@ -14,6 +14,7 @@ import {
 import {IRules} from "./interfaces/rules";
 import {IVersion} from "./interfaces/version";
 import {ITruckyEvent} from "./interfaces/trucky/events";
+import {ITruckyBlog} from "./interfaces/trucky/blog";
 
 const restManager = new CRestManager();
 
@@ -22,14 +23,14 @@ const restManager = new CRestManager();
 export namespace truckersMP {
     export class Client {
 
-        public async getPlayer(id: string): Promise<IPlayer> {
+        public static async getPlayer(id: string): Promise<IPlayer> {
             const response = await restManager.request("https://api.truckersmp.com/v2/player/" + id, "GET")
             if (response.status == 200) {
                 return await response.json()["response"];
             }
         }
 
-        public async getBans(id: string): Promise<IBans[]> {
+        public static async getBans(id: string): Promise<IBans[]> {
             let bans: IBans[] = [];
             const response = await restManager.request("https://api.truckersmp.com/v2/bans/" + id, "GET")
             if (response.status == 200) {
@@ -41,7 +42,7 @@ export namespace truckersMP {
             }
         }
 
-        public async getServers(): Promise<IServer[]> {
+        public static async getServers(): Promise<IServer[]> {
             let servers: IServer[] = [];
             const response = await restManager.request("https://api.truckersmp.com/v2/servers", "GET");
             if (response.status == 200) {
@@ -54,30 +55,31 @@ export namespace truckersMP {
             }
         }
 
-        public async getGameTime(): Promise<Number> {
+        public static async getGameTime(): Promise<Number> {
             const response = await restManager.request("https://api.truckersmp.com/v2/game_time", "GET");
             if (response.status == 200) {
                 return await response.json()["game_time"];
             }
         }
 
-        public async getVersion(): Promise<IVersion> {
+        public static async getVersion(): Promise<IVersion> {
             const response = await restManager.request("https://api.truckersmp.com/v2/version", "GET");
             if (response.status == 200) {
                 return await response.json();
             }
         }
 
-        public async getRules(): Promise<IRules> {
+        public static async getRules(): Promise<IRules> {
             const response = await restManager.request("https://api.truckersmp.com/v2/rules", "GET");
             if (response.status == 200) {
                 return await response.json();
             }
         }
+
     }
 
     export class Company {
-        public async getIndex(): Promise<ICompanyIndex> {
+        public static async getIndex(): Promise<ICompanyIndex> {
             let companyIndex: ICompanyIndex = {response: {recent: [], featured_cover: [], featured: []}};
             const response = await restManager.request("https://api.truckersmp.com/v2/vtc", "GET");
             if (response.status == 200) {
@@ -97,14 +99,14 @@ export namespace truckersMP {
             }
         }
 
-        public async getInformation(id: string): Promise<ICompany> {
+        public static async getInformation(id: string): Promise<ICompany> {
             const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${id}`, "GET");
             if (response.status == 200) {
                 return await response.json()["response"]; // TODO: convert this into json.response (see getplayer() return)
             }
         }
 
-        public async getNews(id: string): Promise<ICompanyNews[]> {
+        public static async getNews(id: string): Promise<ICompanyNews[]> {
             let news: ICompanyNews[] = [];
             const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${id}/news`, "GET");
             if (response.status == 200) {
@@ -117,14 +119,14 @@ export namespace truckersMP {
             }
         }
 
-        public async getNewsPost(id: string, news: string): Promise<ICompanyNewsPost> {
+        public static async getNewsPost(id: string, news: string): Promise<ICompanyNewsPost> {
             const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${id}/news/${news}`, "GET");
             if (response.status == 200) {
                 return await response.json()["response"];
             }
         }
 
-        public async getRoles(id: string): Promise<ICompanyRoleInformation[]> {
+        public static async getRoles(id: string): Promise<ICompanyRoleInformation[]> {
             const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${id}/roles`, "GET");
             if (response.status == 200) {
                 let roles: ICompanyRoleInformation[] = [];
@@ -138,7 +140,7 @@ export namespace truckersMP {
             }
         }
 
-        public async getRole(id: string, roleId: string): Promise<ICompanyRoleInformation> {
+        public static async getRole(id: string, roleId: string): Promise<ICompanyRoleInformation> {
             const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${id}/role/${roleId}`, "GET");
             if (response.status == 200) {
                 let role: ICompanyRoleInformation;
@@ -148,7 +150,7 @@ export namespace truckersMP {
             }
         }
 
-        public async getMembers(id: string): Promise<ICompanyMember[]> {
+        public static async getMembers(id: string): Promise<ICompanyMember[]> {
             const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${id}/members`, "GET");
             if (response.status == 200) {
                 let members: ICompanyMember[] = [];
@@ -162,7 +164,7 @@ export namespace truckersMP {
             }
         }
 
-        public async getMember(id: string, member: string): Promise<ICompanyMember> {
+        public static async getMember(id: string, member: string): Promise<ICompanyMember> {
             const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${id}/member/${member}`, "GET");
             if (response.status == 200) {
                 return await response.json()["response"];
@@ -171,7 +173,7 @@ export namespace truckersMP {
     }
 
     export class truckyClient {
-        public async getEvents(): Promise<ITruckyEvent[]> {
+        public static async getEvents(): Promise<ITruckyEvent[]> {
             const response = await restManager.request("https://api.truckyapp.com/v2/events", "GET");
             if (response.status == 200) {
                 const json = await response.json();
@@ -183,7 +185,7 @@ export namespace truckersMP {
             }
         }
 
-        public async getBlogs(): Promise<ITruckyBlog[]> {
+        public static async getBlogs(): Promise<ITruckyBlog[]> {
             const response = await restManager.request("https://api.truckyapp.com/v3/rss/truckyblog", "GET");
             if (response.status == 200) {
                 const json = await response.json();
@@ -195,7 +197,7 @@ export namespace truckersMP {
             }
         }
 
-        public async getBlogsAts(): Promise<ITruckyBlog[]> {
+        public static async getBlogsAts(): Promise<ITruckyBlog[]> {
             const response = await restManager.request("https://api.truckyapp.com/v3/rss/ats", "GET");
             if (response.status == 200) {
                 const json = await response.json();
@@ -207,7 +209,7 @@ export namespace truckersMP {
             }
         }
 
-        public async getBlogsEts(): Promise<ITruckyBlog[]> {
+        public static async getBlogsEts(): Promise<ITruckyBlog[]> {
             const response = await restManager.request("https://api.truckyapp.com/v3/rss/ets2", "GET");
             if (response.status == 200) {
                 const json = await response.json();
@@ -219,7 +221,7 @@ export namespace truckersMP {
             }
         }
 
-        public async getBlogsTruckersMP(): Promise<ITruckyBlog[]> {
+        public static async getBlogsTruckersMP(): Promise<ITruckyBlog[]> {
             const response = await restManager.request("https://api.truckyapp.com/v3/rss/truckersMP", "GET");
             if (response.status == 200) {
                 const json = await response.json();
@@ -231,7 +233,7 @@ export namespace truckersMP {
             }
         }
 
-        public async getBlogsTruckyAnnouncements(): Promise<ITruckyBlog[]> {
+        public static async getBlogsTruckyAnnouncements(): Promise<ITruckyBlog[]> {
             const response = await restManager.request("https://api.truckyapp.com/v3/rss/truckyannouncements", "GET");
             if (response.status == 200) {
                 const json = await response.json();
