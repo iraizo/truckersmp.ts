@@ -2134,10 +2134,11 @@ typedoc-default-themes@^0.10.2:
     lunr "^2.3.8"
 
 typedoc-neo-theme@^1.0.9:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/typedoc-neo-theme/-/typedoc-neo-theme-1.0.9.tgz#03ca596427ed0f36de951d96b37e20bc15bc3200"
-  integrity sha512-g6ITZAkRBTVyTQnyq8LfYN3Y2fOoLnND3gG3nK7lcRthQ1kU4pTEK711KCEaceSK93qB5EgtLZkjv7NOg7qRTw==
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/typedoc-neo-theme/-/typedoc-neo-theme-1.0.10.tgz#44e5ad539d10e74839ce863468d2edb2117c3d7f"
+  integrity sha512-PmbqBFNyG8atVHIJ1Wgy8gm+7vR7Anl7cewOxI8qxo7M4Jk7vaY9pqJSnOm9Mfkk7k73Pw3mJVl3jxP4s0r/oA==
   dependencies:
+    lunr "^2.3.8"
     typedoc "~0.17.8"
 
 typedoc@^0.18.0:
