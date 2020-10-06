@@ -11,7 +11,7 @@ If you want to use the API without the library, check out the <a href="https://s
 - Node
 
 ## Documentation
-Documentation for API client can be found <a href="https://tsmpdocs.switchbla.de/">here</a>.
+Documentation for API client can be found <a href="https://truckersmp-ts.vercel.app/">here</a>.
 
 ## Support
 If you have any issues with the library please create a <a href="https://github.com/iraizo/truckersmp.ts/issues">issue</a> and i will try to help you.
