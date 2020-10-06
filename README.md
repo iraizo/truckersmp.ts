@@ -16,8 +16,5 @@ Documentation for API client can be found <a href="https://tsmpdocs.switchbla.de
 ## Support
 If you have any issues with the library please create a <a href="https://github.com/iraizo/truckersmp.ts/issues">issue</a> and i will try to help you.
 
-## TODO
-- Add native error handling via the return JSON.
-- Add <a href="https://api.truckyapp.com/docs/">truckyapp api</a>
 ## License
 This package is open-source and is licensed under the <a href="https://github.com/iraizo/truckersmp.ts/blob/master/LICENSE.md">MIT license</a>.
