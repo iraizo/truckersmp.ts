@@ -1,4 +1,4 @@
-interface ITruckySteamPlayer {
+export interface ITruckySteamPlayer {
     steamID?: string,
     playerInfo: {
         steamid: string,
