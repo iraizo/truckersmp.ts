@@ -15,6 +15,7 @@ import {IRules} from "./interfaces/rules";
 import {IVersion} from "./interfaces/version";
 import {ITruckyEvent} from "./interfaces/trucky/events";
 import {ITruckyBlog} from "./interfaces/trucky/blog";
+import {ITruckySteamPlayer} from "./interfaces/trucky/steam";
 
 const restManager = new CRestManager();
 
@@ -26,7 +27,8 @@ export namespace truckersMP {
         public static async getPlayer(id: string): Promise<IPlayer> {
             const response = await restManager.request("https://api.truckersmp.com/v2/player/" + id, "GET")
             if (response.status == 200) {
-                return await response.json()["response"];
+                const json = await response.json();
+                return json["response"];
             }
         }
 
@@ -58,7 +60,8 @@ export namespace truckersMP {
         public static async getGameTime(): Promise<Number> {
             const response = await restManager.request("https://api.truckersmp.com/v2/game_time", "GET");
             if (response.status == 200) {
-                return await response.json()["game_time"];
+                const json = await response.json();
+                return json["game_time"];
             }
         }
 
@@ -102,7 +105,8 @@ export namespace truckersMP {
         public static async getInformation(id: string): Promise<ICompany> {
             const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${id}`, "GET");
             if (response.status == 200) {
-                return await response.json()["response"]; // TODO: convert this into json.response (see getplayer() return)
+                const json = await response.json();
+                return json["response"];
             }
         }
 
@@ -122,7 +126,8 @@ export namespace truckersMP {
         public static async getNewsPost(id: string, news: string): Promise<ICompanyNewsPost> {
             const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${id}/news/${news}`, "GET");
             if (response.status == 200) {
-                return await response.json()["response"];
+                const json = await response.json();
+                return json["response"];
             }
         }
 
@@ -146,7 +151,7 @@ export namespace truckersMP {
                 let role: ICompanyRoleInformation;
                 const json = await response.json();
 
-                return await response.json()["response"];
+                return await json["response"];
             }
         }
 
@@ -167,7 +172,8 @@ export namespace truckersMP {
         public static async getMember(id: string, member: string): Promise<ICompanyMember> {
             const response = await restManager.request(`https://api.truckersmp.com/v2/vtc/${id}/member/${member}`, "GET");
             if (response.status == 200) {
-                return await response.json()["response"];
+                const json = await response.json();
+                return json["response"];
             }
         }
     }
@@ -244,5 +250,14 @@ export namespace truckersMP {
                 return blogArray;
             }
         }
+
+        public static async getFriendsData(steamid: string): Promise<ITruckySteamPlayer> {
+            const response = await restManager.request(`https://api.truckyapp.com/v2/steam/getFriendsData?steamid=${steamid}`, "GET");
+            if(response.status == 200) {
+                return await response.json();
+            }
+        }
+
+
     }
 }
