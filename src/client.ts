@@ -15,7 +15,7 @@ import {IRules} from "./interfaces/rules";
 import {IVersion} from "./interfaces/version";
 import {ITruckyEvent} from "./interfaces/trucky/events";
 import {ITruckyBlog} from "./interfaces/trucky/blog";
-import {ITruckySteamPlayer} from "./interfaces/trucky/steam";
+import {ISteam} from "./interfaces/trucky/steam";
 
 const restManager = new CRestManager();
 
@@ -251,10 +251,18 @@ export namespace truckersMP {
             }
         }
 
-        public static async getFriendsData(steamid: string): Promise<ITruckySteamPlayer> {
+        public static async getFriendsData(steamid: string): Promise<ISteam[]> {
             const response = await restManager.request(`https://api.truckyapp.com/v2/steam/getFriendsData?steamid=${steamid}`, "GET");
             if(response.status == 200) {
-                return await response.json();
+                const json = await response.json();
+
+                let steamArray: ISteam[] = [];
+
+                for(let key in Object.keys(json["response"])) {
+                    steamArray.push(json["response"][key])
+                }
+
+                return steamArray;
             }
         }
 
