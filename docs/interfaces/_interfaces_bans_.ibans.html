@@ -84,8 +84,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_interfaces_bans_.ibans.html#error" class="tsd-kind-icon">error</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_interfaces_bans_.ibans.html#response" class="tsd-kind-icon">response</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_interfaces_bans_.ibans.html#active" class="tsd-kind-icon">active</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_interfaces_bans_.ibans.html#adminid" class="tsd-kind-icon">adminID</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_interfaces_bans_.ibans.html#adminname" class="tsd-kind-icon">admin<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_interfaces_bans_.ibans.html#expiration" class="tsd-kind-icon">expiration</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_interfaces_bans_.ibans.html#reason" class="tsd-kind-icon">reason</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,22 +97,52 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="error" class="tsd-anchor"></a>
-					<h3>error</h3>
-					<div class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="active" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> active</h3>
+					<div class="tsd-signature tsd-kind-icon">active<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/iraizo/truckersmp.ts/blob/85fe229/src/interfaces/bans.ts#L4">interfaces/bans.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/iraizo/truckersmp.ts/blob/151308e/src/interfaces/bans.ts#L3">interfaces/bans.ts:3</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="response" class="tsd-anchor"></a>
-					<h3>response</h3>
-					<div class="tsd-signature tsd-kind-icon">response<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">{ </span>active<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>adminID<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>adminName<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>expiration<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>reason<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">]</span></div>
+					<a name="adminid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> adminID</h3>
+					<div class="tsd-signature tsd-kind-icon">adminID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/iraizo/truckersmp.ts/blob/85fe229/src/interfaces/bans.ts#L5">interfaces/bans.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/iraizo/truckersmp.ts/blob/151308e/src/interfaces/bans.ts#L6">interfaces/bans.ts:6</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="adminname" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> admin<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">admin<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/iraizo/truckersmp.ts/blob/151308e/src/interfaces/bans.ts#L5">interfaces/bans.ts:5</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="expiration" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> expiration</h3>
+					<div class="tsd-signature tsd-kind-icon">expiration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/iraizo/truckersmp.ts/blob/151308e/src/interfaces/bans.ts#L2">interfaces/bans.ts:2</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="reason" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> reason</h3>
+					<div class="tsd-signature tsd-kind-icon">reason<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/iraizo/truckersmp.ts/blob/151308e/src/interfaces/bans.ts#L4">interfaces/bans.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -185,10 +218,19 @@
 						<a href="_interfaces_bans_.ibans.html" class="tsd-kind-icon">IBans</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_interfaces_bans_.ibans.html#error" class="tsd-kind-icon">error</a>
+								<a href="_interfaces_bans_.ibans.html#active" class="tsd-kind-icon">active</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_interfaces_bans_.ibans.html#response" class="tsd-kind-icon">response</a>
+								<a href="_interfaces_bans_.ibans.html#adminid" class="tsd-kind-icon">adminID</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_interfaces_bans_.ibans.html#adminname" class="tsd-kind-icon">admin<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_interfaces_bans_.ibans.html#expiration" class="tsd-kind-icon">expiration</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_interfaces_bans_.ibans.html#reason" class="tsd-kind-icon">reason</a>
 							</li>
 						</ul>
 					</li>
