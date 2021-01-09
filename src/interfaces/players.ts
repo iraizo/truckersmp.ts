@@ -1,6 +1,4 @@
 export interface IPlayer {
-    error: boolean,
-    response: {
         id: number,
         name: string
         avatar: string,
@@ -37,5 +35,4 @@ export interface IPlayer {
             inVTC: boolean,
             memberID: number,
         }
-    }
 }
