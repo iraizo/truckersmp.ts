@@ -4,3 +4,4 @@ testing.ts
 dist
 truckersmp.code-workspace
 testing
+src/**/*.js
