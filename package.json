@@ -19,7 +19,7 @@
     "build:docs": "typedoc --out docs src"
   },
   "devDependencies": {
-    "@types/node": "^15.0.0",
+    "@types/node": "^16.0.0",
     "@types/node-fetch": "^2.5.7",
     "@wessberg/rollup-plugin-ts": "^1.3.1",
     "rollup": "^2.23.0",
