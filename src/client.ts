@@ -267,10 +267,18 @@ export namespace truckersMP {
         }
 
         public static async getPlayerSummaries(steamid: string): Promise<ISteam[]> {
-            
-            return null;
+            const response = await restManager.request(`https://api.truckyapp.com/v2/steam/getPlayerSummaries?steamid=${steamid}`, "GET");
+            if(response.status == 200) {
+                const json = await response.json();
+
+                let steamArray: ISteam[] = [];
+
+                for(let key in Object.keys(json["response"])) {
+                    steamArray.push(json["response"][key]);
+                }
+
+                return steamArray;
+            }
         }
-
-
     }
 }
