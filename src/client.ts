@@ -266,6 +266,11 @@ export namespace truckersMP {
             }
         }
 
+        public static async getPlayerSummaries(steamid: string): Promise<ISteam[]> {
+            
+            return null;
+        }
+
 
     }
 }
