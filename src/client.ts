@@ -266,7 +266,7 @@ export namespace truckersMP {
             }
         }
 
-        public static async getPlayerSummaries(steamid: string): Promise<ISteam[]> {
+        public static async getPlayerSummaries(steamid: number): Promise<ISteam[]> {
             const response = await restManager.request(`https://api.truckyapp.com/v2/steam/getPlayerSummaries?steamid=${steamid}`, "GET");
             if(response.status == 200) {
                 const json = await response.json();
