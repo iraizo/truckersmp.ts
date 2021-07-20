@@ -280,5 +280,20 @@ export namespace truckersMP {
                 return steamArray;
             }
         }
+
+        public static async resolveVanityUrl(username: string): Promise<ISteam[]> {
+            const response = await restManager.request(`https://api.truckyapp.com/v2/steam/resolveVanityUrl?username=${username}`, "GET");
+            if(response.status == 200) {
+                const json = await response.json();
+
+                let steamArray: ISteam[] = [];
+
+                for(let key in Object.keys(json["response"])) {
+                    steamArray.push(json["response"][key]);
+                }
+
+                return steamArray;
+            }
+        }
     }
 }
